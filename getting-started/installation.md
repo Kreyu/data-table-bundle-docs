@@ -1,7 +1,25 @@
-# Frontend installation
+# Installation
 
-This bundle provides front-end scripts created using the [Stimulus JavaScript framework](https://stimulus.hotwired.dev/). \
-To begin with, make sure your application uses the [Symfony Stimulus Bridge](https://github.com/symfony/stimulus-bridge).
+## Downloading the bundle
+
+Before you start, make sure you have [Symfony UX configured in your app](https://symfony.com/doc/current/frontend/ux.html).
+
+```bash
+$ composer require kreyu/data-table-bundle
+```
+
+## Enabling the bundle
+
+Enable the bundle by adding it to the `config/bundles.php`:
+
+{% code title="config/bundles.php" lineNumbers="true" %}
+```php
+return [
+    // ...
+    Kreyu\Bundle\DataTableBundle\KreyuDataTableBundle::class => ['all' => true],
+];
+```
+{% endcode %}
 
 ## Adding the dependencies
 

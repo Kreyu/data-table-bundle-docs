@@ -92,6 +92,7 @@ kreyu_data_table:
 {% endtab %}
 
 {% tab title="PHP" %}
+{% code title="config/packages/kreyu_data_table.php" lineNumbers="true" %}
 ```php
 <?php
 
@@ -148,6 +149,7 @@ return static function (KreyuDataTableConfig $config) {
     ;
 };
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 
