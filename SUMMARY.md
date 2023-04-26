@@ -9,7 +9,7 @@
 
 ## 💻 Basic usage
 
-* [Introduction](usage/introduction.md)
+* [Warming up](basic-usage/warming-up.md)
 * [Creating data tables](usage/creating-data-tables.md)
 * [Adding columns](basic-usage/adding-columns.md)
 * [Rendering the table](usage/rendering-the-table.md)
@@ -28,6 +28,7 @@
 * [Creating type extensions](advanced/creating-type-extensions.md)
 * [Adding virtual columns](advanced/adding-virtual-columns.md)
 * [Creating data providers](advanced/creating-data-providers.md)
+* [Custom request handlers](advanced/custom-request-handlers.md)
 
 ## 💡 Philosophy
 

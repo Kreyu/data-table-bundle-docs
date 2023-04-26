@@ -1,9 +1,9 @@
-# Data sources
+# Creating data providers
 
 In order to support various data sources, the bundle uses the "proxy query" classes.\
 Proxy queries are classes that implements [ProxyQueryInterface](https://github.com/Kreyu/data-table-bundle/blob/main/src/Query/ProxyQueryInterface.php).
 
-They work as an "adapter" for the data source you're using in the application. For example, if you want to display a list of products from the database, and your application uses Doctrine ORM, then you'd want to use the built-in [DoctrineOrmProxyQuery](https://github.com/Kreyu/data-table-bundle/blob/main/src/Bridge/Doctrine/Orm/Query/DoctrineOrmProxyQuery.php). If your data comes from another source (from an array, from CSV, etc.), then you can create a custom proxy query class.
+They work as an "adapter" or "provider" for the data source you're using in the application. For example, if you want to display a list of products from the database, and your application uses Doctrine ORM, then you'd want to use the built-in [DoctrineOrmProxyQuery](https://github.com/Kreyu/data-table-bundle/blob/main/src/Bridge/Doctrine/Orm/Query/DoctrineOrmProxyQuery.php). If your data comes from another source (from an array, from CSV, etc.), then you can create a custom proxy query class.
 
 ## Creating custom proxy query <a href="#creating-custom-proxy-query" id="creating-custom-proxy-query"></a>
 
@@ -56,7 +56,7 @@ class ArrayProxyQuery implements ProxyQueryInterface
 ```
 {% endcode %}
 
-## Creating the proxy query factory <a href="#creating-the-proxy-query-factory" id="creating-the-proxy-query-factory"></a>
+## Introducing the proxy query factory <a href="#creating-the-proxy-query-factory" id="creating-the-proxy-query-factory"></a>
 
 When using the data table factory, you can pass either the custom proxy query class, or just a data you want to operate on. For example, if you pass Doctrine ORM's QueryBuilder class, it will be automatically converted to the [DoctrineOrmProxyQuery](https://github.com/Kreyu/data-table-bundle/blob/main/src/Bridge/Doctrine/Orm/Query/DoctrineOrmProxyQuery.php) object:
 
@@ -64,7 +64,7 @@ When using the data table factory, you can pass either the custom proxy query cl
 ```php
 namespace App\Controller;
 
-use App\DataTable\Type\ProductType;
+use App\DataTable\Type\ProductDataTableType;
 use App\Repository\ProductRepository;
 use Kreyu\Bundle\DataTableBundle\Bridge\Doctrine\Orm\Query\DoctrineOrmProxyQuery;
 use Kreyu\Bundle\DataTableBundle\DataTableControllerTrait;
@@ -81,10 +81,16 @@ class ProductController extends AbstractController
         $query = $repository->createQueryBuilder('product');
 
         // Option 1: pass desired ProxyQuery manually:
-        $dataTable = $this->createDataTable(ProductType::class, new DoctrineOrmProxyQuery($query));
+        $dataTable = $this->createDataTable(
+            type: ProductDataTableType::class, 
+            query: new DoctrineOrmProxyQuery($query),
+        );
 
         // Option 2: pass the query builder directly, and let the bundle do the work:
-        $dataTable = $this->createDataTable(ProductType::class, $query);
+        $dataTable = $this->createDataTable(
+            type: ProductDataTableType::class, 
+            query: $query,
+        );
 
         // ...
     }
@@ -92,7 +98,9 @@ class ProductController extends AbstractController
 ```
 {% endcode %}
 
-This is thanks to the proxy query factories. In the background, a [ChainProxyQueryFactory](https://github.com/Kreyu/data-table-bundle/blob/main/src/Query/ChainProxyQueryFactory.php) is used, which iterates on every proxy query factory registered in the container, and returns the first successfully created proxy query.
+This is thanks to the **proxy query factories**. In the background, a [ChainProxyQueryFactory](https://github.com/Kreyu/data-table-bundle/blob/main/src/Query/ChainProxyQueryFactory.php) is used, which iterates on every proxy query factory registered in the container, and returns the first successfully created proxy query.
+
+## Creating custom proxy query factory
 
 To create a custom proxy query factory, create a class that implements [ProxyQueryFactoryInterface](https://github.com/Kreyu/data-table-bundle/blob/main/src/Query/ProxyQueryFactoryInterface.php):
 
@@ -101,6 +109,7 @@ To create a custom proxy query factory, create a class that implements [ProxyQue
 namespace App\DataTable\Query;
 
 use App\DataTable\Query\ArrayProxyQuery;
+use Kreyu\Bundle\DataTableBundle\Exception\UnexpectedTypeException;
 use Kreyu\Bundle\DataTableBundle\Query\ProxyQueryFactoryInterface;
 use Kreyu\Bundle\DataTableBundle\Query\ProxyQueryInterface;
 
@@ -118,7 +127,7 @@ class ArrayProxyQueryFactory implements ProxyQueryFactoryInterface
 ```
 {% endcode %}
 
-Note that if the custom proxy query does not support a specific data class, you have to throw an [UnexpectedTypeException](https://github.com/Kreyu/data-table-bundle/blob/main/src/Exception/UnexpectedTypeException.php), so the chain proxy query factory will know to skip that factory and check other ones.
+Note that if the custom proxy query does not support a specific data class, you **have** to throw an [UnexpectedTypeException](https://github.com/Kreyu/data-table-bundle/blob/main/src/Exception/UnexpectedTypeException.php), so the chain proxy query factory will know to skip that factory and check other ones.
 
 ## Registering the proxy query factory as a service <a href="#registering-the-proxy-query-factory-as-a-service" id="registering-the-proxy-query-factory-as-a-service"></a>
 

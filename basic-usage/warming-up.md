@@ -1,4 +1,4 @@
-# Introduction
+# Warming up
 
 This section of documentation should be treated like a course, as it explains step-by-step how to use the bundle - for complete reference, see the "Reference" section.
 
@@ -25,6 +25,4 @@ For the sake of simplicity, the Doctrine mapping is skipped in the code block ab
 
 ## Frontend
 
-The examples contain screenshots using the built-in [Tabler](https://tabler.io/) theme.
-
-##
+The examples contain screenshots using the built-in [Tabler UI Kit](https://tabler.io/) theme, therefore it assumes that the project has the [Tabler UI Kit](https://tabler.io/) styles and scripts included.
