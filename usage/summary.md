@@ -4,9 +4,9 @@ The basic usage section went through every bundle feature in a... well, very bas
 
 The recommended sections to continue reading:
 
+* [Understanding the Types API](../philosophy/understanding-the-types-api.md) - to understand how the types and their extensions work;
 * [Adding virtual columns](../advanced/adding-virtual-columns.md) - to display columns with data that, for example, does not exist in the database or the entity itself;
 * [Creating custom types](../advanced/creating-custom-types.md) - to create custom columns, filters, actions and exporters, tailored specifically for the project use case;
 * [Creating type extensions](../advanced/creating-type-extensions.md) - to extend any type in the system, using the extension classes;
-*
 
 ##
