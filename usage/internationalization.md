@@ -68,7 +68,7 @@ The column types are little different than the data table types - instead of `tr
 * &#x20;`header_translation_domain` - used to translate the column headers, e.g. "Created At" into "Creation date" - by default, inherits the domain from the data table itself;
 * `value_translation_domain` - used to translate the column values, for example, in case of boolean column type, it translates the "Yes" and "No" strings - it does not inherit the domain from the data table, but uses the `KreyuDataTable`.
 
-There may be some cases, where a single column may use a different translation domain - this can be configured in the data table type itself:
+There may be some cases, where a single column may use a different translation domain. Let's assume that the `dates` translation domain contains strings related with dates, therefore, the `createdAt` column should use the `dates` domain:
 
 {% code title="src/DataTable/Type/ProductDataTableType.php" lineNumbers="true" %}
 ```php

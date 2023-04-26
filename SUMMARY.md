@@ -18,7 +18,7 @@
 * [Exporting the data](basic-usage/exporting-the-data.md)
 * [Adding actions](basic-usage/adding-actions.md)
 * [Personalization](usage/personalization.md)
-* [Persisting the important stuff](basic-usage/persisting-the-important-stuff.md)
+* [Persisting applied data](basic-usage/persisting-applied-data.md)
 * [Internationalization](usage/internationalization.md)
 * [Summary](usage/summary.md)
 
@@ -27,7 +27,7 @@
 * [Creating custom types](advanced/creating-custom-types.md)
 * [Creating type extensions](advanced/creating-type-extensions.md)
 * [Adding virtual columns](advanced/adding-virtual-columns.md)
-* [Enabling persistence](advanced/enabling-persistence.md)
+* [Creating data providers](advanced/creating-data-providers.md)
 
 ## 💡 Philosophy
 
@@ -54,6 +54,5 @@
 * [Personalization](reference/personalization.md)
 * [Persistence](reference/persistence.md)
 * [Theming](reference/theming.md)
-* [Data sources](reference/data-sources.md)
 * [Configuration](reference/configuration.md)
 * [Twig](reference/twig.md)

@@ -81,4 +81,4 @@ If you wish to enable the personalization per data table type, you can change th
 This configures the default option for the data table type - which still can be changed when creating the data table itself!
 
 The personalization feature may look really handy, but refresh the page after applying the personalization - it's gone! Now imagine configuring it on every request as the user - nightmare :ghost:\
-This can be solved by [enabling the persistence feature](../basic-usage/persisting-the-important-stuff.md), which will save the personalization data (and even the applied pagination, sorting and filters if you wish!) between requests, per user.
+This can be solved by [enabling the persistence feature](../basic-usage/persisting-applied-data.md), which will save the personalization data (and even the applied pagination, sorting and filters if you wish!) between requests, per user.
