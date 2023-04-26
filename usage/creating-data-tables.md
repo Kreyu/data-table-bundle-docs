@@ -27,6 +27,8 @@ The trait gives access to three helper methods:
 | `createNamedDataTable`   | Creates data table using the type classes, but explicitly sets its name. Used in cases where the single page displays multiple data tables of the same type. |
 | `createDataTableBuilder` | Creates a builder to describe the data table manually, without type classes. In most cases it is used for prototyping rather than actual usage.              |
 
+Therefore, to create a data table, we need
+
 ## Creating data table type classes <a href="#creating-data-table-classes" id="creating-data-table-classes"></a>
 
 The data table type classes work as a blueprint. A single type can be used to create as many data tables as needed - making them a nice, reusable piece of code.
@@ -45,7 +47,7 @@ class ProductDataTableType extends AbstractDataTableType
 
 Now that the data table type class has been created, it can be used in the controller:
 
-<pre class="language-php" data-title="src/Controller/ProductController.php" data-overflow="wrap"><code class="lang-php">use App\DataTable\Type\ProductDataTableType;
+<pre class="language-php" data-title="src/Controller/ProductController.php" data-line-numbers><code class="lang-php">use App\DataTable\Type\ProductDataTableType;
 use Kreyu\Bundle\DataTableBundle\DataTableControllerTrait;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -53,10 +55,10 @@ class ProductController extends AbstractController
 {
     use DataTableControllerTrait;
     
-<strong>    public function index()
-</strong>    {
-        $dataTable = $this->createDataTable(ProductDataTableType::class);
-    }
+    public function index()
+    {
+<strong>        $dataTable = $this->createDataTable(ProductDataTableType::class);
+</strong>    }
 }
 </code></pre>
 
@@ -92,4 +94,4 @@ Running the code will result in an error:
 
 The message is self-explainatory - the data table has no configured columns, yet.&#x20;
 
-Let's continue to the next chapter - [adding columns](adding-columns.md).
+Let's continue to the next chapter - [adding columns](../basic-usage/adding-columns.md).

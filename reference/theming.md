@@ -12,8 +12,17 @@ The following themes are natively available in the bundle:
 
 By default, the [@KreyuDataTable/themes/base.html.twig](https://github.com/Kreyu/data-table-bundle/blob/main/src/Resources/views/themes/base.html.twig) theme is used.
 
+{% hint style="warning" %}
+**Warning**
+
+The bundle **does not** contain the CSS libraries themselves! \
+These **must** be installed and configured individually in the project.
+{% endhint %}
+
 {% hint style="info" %}
-**Note:** the default template provides minimal HTML required to properly display the data table. It does **not** support filtering, exporting and personalization features!
+**Note**
+
+The default template provides minimal HTML required to properly display the data table. It does **not** support filtering, exporting and personalization features!
 {% endhint %}
 
 ## Selecting a theme <a href="#selecting-a-theme" id="selecting-a-theme"></a>

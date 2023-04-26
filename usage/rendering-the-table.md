@@ -43,19 +43,50 @@ Voilà! :sparkles: The Twig helper function handles all the work and renders the
 
 ## Selecting a theme
 
-Unfortunately, the rendered data table looks _**awful**._ This is because a default theme is being used, which contains only the HTML necessary to base a custom themes on. To fix that, create bundle configuration file and specify a Bootstrap 5 theme:
+Unfortunately, the rendered data table looks _**awful**._ This is because the default theme is being used, which contains only the HTML necessary to base a custom themes on. To fix that, create bundle configuration file and specify desired theme:
 
+{% tabs %}
+{% tab title="YAML" %}
 {% code title="config/packages/kreyu_data_table.yaml" lineNumbers="true" %}
 ```yaml
 kreyu_data_table:
-    themes:
-        - '@KreyuDataTable/themes/bootstrap_5.html.twig'
+  themes:
+    - '@KreyuDataTable/themes/tabler.html.twig'
 ```
 {% endcode %}
+{% endtab %}
 
-The table is now rendered properly, using a Bootstrap 5 theme.&#x20;
+{% tab title="PHP" %}
+{% code title="config/packages/kreyu_data_table.php" lineNumbers="true" %}
+```php
+use Symfony\Config\KreyuDataTableConfig;
 
-For reference, see built-in themes.
+return static function (KreyuDataTableConfig $config) {
+    $config->themes([
+        '@KreyuDataTable/themes/tabler.html.twig',
+    ]);
+};
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+The table is now rendered properly, using a [Tabler UI Kit](https://tabler.io/) theme.&#x20;
+
+For reference, see [built-in themes](../reference/theming.md#built-in-themes).
+
+{% hint style="warning" %}
+**Warning**
+
+The bundle **does not** contain the CSS libraries themselves! \
+These **must** be installed and configured individually in the project.
+{% endhint %}
+
+{% hint style="info" %}
+**Note**
+
+Following articles contain screenshots (and HTML classes in some code examples) with this theme in mind. This theme is based on Bootstrap 5, therefore the differences between them are minimal.
+{% endhint %}
 
 ## Binding request to the data table
 
@@ -88,4 +119,4 @@ class ProductController extends AbstractController
 
 Now the data table is fully interactive, by having access to the request object.
 
-Speaking of interactivity, let's let the user [filter the table](defining-the-filters.md).
+Speaking of interactivity, let's let the user [filter the table](../basic-usage/defining-the-filters.md).

@@ -2,7 +2,7 @@
 
 This section of documentation should be treated like a course, as it explains step-by-step how to use the bundle - for complete reference, see the "Reference" section.
 
-## Assumptions
+## Entities
 
 The articles assumes that the project uses Doctrine ORM and contains a Product entity:
 
@@ -22,3 +22,9 @@ class Product
 {% endcode %}
 
 For the sake of simplicity, the Doctrine mapping is skipped in the code block above.
+
+## Frontend
+
+The examples contain screenshots using the built-in [Tabler](https://tabler.io/) theme.
+
+##

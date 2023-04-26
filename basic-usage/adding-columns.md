@@ -56,4 +56,4 @@ class ProductDataTableType extends AbstractDataTableType
 ```
 {% endcode %}
 
-Now that the data table contains some columns, let's [render it](rendering-the-table.md) to the user.
+Now that the data table contains some columns, let's [render it](../usage/rendering-the-table.md) to the user.
