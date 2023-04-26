@@ -1,6 +1,6 @@
 # Summary
 
-The basic usage section went through every bundle feature in a... well, very basic manner - only explaining the absolute minimum required to configure a data table. It may suit some cases, but bundle is much, much more extensive - if needed, read through the rest of the documentation to get better understanding on how things work.
+The basic usage section went through every available feature in a _very_ basic manner - only explaining the absolute minimum required to configure a data table. It may suit some cases, but bundle is much, _much_ more extensive - read through the rest of the documentation to get better understanding on how things work.
 
 The recommended sections to continue reading:
 
