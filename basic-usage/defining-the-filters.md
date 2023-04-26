@@ -9,6 +9,7 @@ Let's start by adding a filter for each field in the product entity:
 
 {% code title="src/DataTable/Type/ProductDataTableType.php" lineNumbers="true" %}
 ```php
+use Kreyu\Bundle\DataTableBundle\DataTableBuilderInterface;
 use Kreyu\Bundle\DataTableBundle\Type\AbstractDataTableType;
 
 class ProductDataTableType extends AbstractDataTableType
@@ -53,6 +54,7 @@ In case of the string filter, the default operator is "EQUALS", because it is fi
 
 {% code title="" lineNumbers="true" %}
 ```php
+use Kreyu\Bundle\DataTableBundle\DataTableBuilderInterface;
 use Kreyu\Bundle\DataTableBundle\Type\AbstractDataTableType;
 
 class ProductDataTableType extends AbstractDataTableType
@@ -83,6 +85,7 @@ By default, the operator selector is not visible, because the `operator_options.
 
 {% code title="src/DataTable/Type/ProductDataTableType.php" lineNumbers="true" %}
 ```php
+use Kreyu\Bundle\DataTableBundle\DataTableBuilderInterface;
 use Kreyu\Bundle\DataTableBundle\Type\AbstractDataTableType;
 
 class ProductDataTableType extends AbstractDataTableType

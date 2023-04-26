@@ -9,6 +9,7 @@ Let's start by adding a column for each field in the product entity:
 
 {% code title="src/DataTable/Type/ProductDataTableType.php" lineNumbers="true" %}
 ```php
+use Kreyu\Bundle\DataTableBundle\DataTableBuilderInterface;
 use Kreyu\Bundle\DataTableBundle\Type\AbstractDataTableType;
 
 class ProductDataTableType extends AbstractDataTableType
@@ -36,6 +37,7 @@ The column types are customizable using the options array. The options can be pa
 
 {% code title="src/DataTable/Type/ProductDataTableType.php" lineNumbers="true" %}
 ```php
+use Kreyu\Bundle\DataTableBundle\DataTableBuilderInterface;
 use Kreyu\Bundle\DataTableBundle\Type\AbstractDataTableType;
 
 class ProductDataTableType extends AbstractDataTableType

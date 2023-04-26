@@ -2,24 +2,31 @@
 
 * [Introduction](README.md)
 
-## ⚡ Getting started
+## 🚀 Getting started
 
 * [Installation](getting-started/installation.md)
 * [Configuration](getting-started/configuration.md)
 
-## 💻 Usage
+## 💻 Basic usage
 
-* [Introduction](usage/introduction.md)
-* [Creating data tables](usage/creating-data-tables.md)
-* [Adding columns](usage/adding-columns.md)
-* [Rendering the table](usage/rendering-the-table.md)
-* [Defining the filters](usage/defining-the-filters.md)
-* [Enabling global search](usage/enabling-global-search.md)
-* [Exporting the data](usage/exporting-the-data.md)
-* [Adding actions](usage/adding-actions.md)
-* [Personalization](usage/personalization.md)
-* [Internationalization](usage/internationalization.md)
-* [Summary](usage/summary.md)
+* [Introduction](basic-usage/introduction.md)
+* [Creating data tables](basic-usage/creating-data-tables.md)
+* [Adding columns](basic-usage/adding-columns.md)
+* [Rendering the table](basic-usage/rendering-the-table.md)
+* [Defining the filters](basic-usage/defining-the-filters.md)
+* [Enabling global search](basic-usage/enabling-global-search.md)
+* [Exporting the data](basic-usage/exporting-the-data.md)
+* [Adding actions](basic-usage/adding-actions.md)
+* [Personalization](basic-usage/personalization.md)
+* [Internationalization](basic-usage/internationalization.md)
+* [Summary](basic-usage/summary.md)
+
+## ⚡ Advanced
+
+* [Creating custom types](advanced/creating-custom-types.md)
+* [Creating type extensions](advanced/creating-type-extensions.md)
+* [Adding virtual columns](advanced/adding-virtual-columns.md)
+* [Enabling persistence](advanced/enabling-persistence.md)
 
 ## 💡 Philosophy
 

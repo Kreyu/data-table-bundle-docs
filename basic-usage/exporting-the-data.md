@@ -2,7 +2,7 @@
 
 Ability to export the data is crucial in some use cases. The exporting process is handled by the exporters, which, similar to data tables and its columns and filters, are using the [Types API](../philosophy/understanding-the-types-api.md).
 
-<figure><img src="../.gitbook/assets/image_2023-04-25_21-55-22.png" alt=""><figcaption><p>Export modal in the built-in Bootstrap 5 theme</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image_2023-04-25_21-55-22.png" alt=""><figcaption><p>Export modal with the built-in Tabler theme</p></figcaption></figure>
 
 ## Prerequisites
 
@@ -19,6 +19,7 @@ To add exporter, use the builder's `addExporter()` method:
 
 {% code title="src/DataTable/Type/ProductDataTableType.php" lineNumbers="true" %}
 ```php
+use Kreyu\Bundle\DataTableBundle\DataTableBuilderInterface;
 use Kreyu\Bundle\DataTableBundle\Type\AbstractDataTableType;
 
 class ProductDataTableType extends AbstractDataTableType
