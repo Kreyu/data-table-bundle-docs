@@ -1,6 +1,6 @@
-# Warming up
+# Disclaimer
 
-This section of documentation should be treated like a course, as it explains step-by-step how to use the bundle - for complete reference, see the "Reference" section.
+This section of documentation should be treated like a course, as it explains step-by-step how to use the bundle - for a complete reference, see the "Reference" section.
 
 ## Entities
 

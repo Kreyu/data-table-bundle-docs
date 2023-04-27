@@ -7,7 +7,7 @@ To create a data table, either:
 
 For the sake of simplicity, the documentation uses the trait method:
 
-{% code title="src/Controller/ProductController.php" overflow="wrap" %}
+{% code title="src/Controller/ProductController.php" lineNumbers="true" %}
 ```php
 use Kreyu\Bundle\DataTableBundle\DataTableFactoryAwareTrait;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

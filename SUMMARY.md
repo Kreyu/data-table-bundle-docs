@@ -9,7 +9,7 @@
 
 ## 💻 Basic usage
 
-* [Warming up](basic-usage/warming-up.md)
+* [Disclaimer](basic-usage/disclaimer.md)
 * [Creating data tables](usage/creating-data-tables.md)
 * [Adding columns](basic-usage/adding-columns.md)
 * [Rendering the table](usage/rendering-the-table.md)

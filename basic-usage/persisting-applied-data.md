@@ -1,4 +1,4 @@
-# Persisting the important stuff
+# Persisting applied data
 
 In complex applications, it can be very helpful to retain data such as applied personalization, filters, applied sorting or at least the currently displayed page. The bundle comes with the persistence feature, which can be freely configured for each feature individually.
 
@@ -43,6 +43,7 @@ This configures the default option for the each data table type - which can be c
 {% code title="src/DataTable/Type/ProductDataTableType.php" lineNumbers="true" %}
 ```php
 use Kreyu\Bundle\DataTableBundle\Type\AbstractDataTableType;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ProductDataTableType extends AbstractDataTableType
 {
@@ -61,12 +62,12 @@ This, on the other hand, configures the default option for the specific data tab
 {% code title="src/Controller/ProductController.php" lineNumbers="true" %}
 ```php
 use App\DataTable\Type\ProductDataTableType;
-use Kreyu\Bundle\DataTableBundle\DataTableControllerTrait;
+use Kreyu\Bundle\DataTableBundle\DataTableFactoryAwareTrait;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ProductController extends AbstractController
 {
-    use DataTableControllerTrait;
+    use DataTableFactoryAwareTrait;
     
     public function index()
     {
@@ -86,9 +87,9 @@ Assuming that the user is authenticated, apply the personalization data again, r
 
 The same configuration applies to the rest of the features supporting the persistence:
 
-* pagination (using the \`pagination\_persistence\_\*\` options)
-* filtration (using the \`filtration\_persistence\_\*\` options)
-* sorting (using the \`sorting\_persistence\_\*\` options)
+* pagination (using the `pagination_persistence_*` options)
+* filtration (using the `filtration_persistence_*` options)
+* sorting (using the `sorting_persistence_*` options)
 
 This basic example barely scratches the surface of the persistence feature. Is is possible to use different adapters (to, for example, save the data to database instead of cache), or different subject providers (to, for example, not rely on authenticated user, but on the request IP).&#x20;
 

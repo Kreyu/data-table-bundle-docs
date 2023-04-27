@@ -37,6 +37,7 @@ This configures the default option for the each data table type - which can be c
 {% code title="src/DataTable/Type/ProductDataTableType.php" lineNumbers="true" %}
 ```php
 use Kreyu\Bundle\DataTableBundle\Type\AbstractDataTableType;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ProductDataTableType extends AbstractDataTableType
 {
@@ -55,12 +56,12 @@ This, on the other hand, configures the default option for the specific data tab
 {% code title="src/Controller/ProductController.php" lineNumbers="true" %}
 ```php
 use App\DataTable\Type\ProductDataTableType;
-use Kreyu\Bundle\DataTableBundle\DataTableControllerTrait;
+use Kreyu\Bundle\DataTableBundle\DataTableFactoryAwareTrait;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ProductController extends AbstractController
 {
-    use DataTableControllerTrait;
+    use DataTableFactoryAwareTrait;
     
     public function index()
     {
@@ -75,10 +76,6 @@ class ProductController extends AbstractController
 }
 ```
 {% endcode %}
-
-If you wish to enable the personalization per data table type, you can change the default`personalization_enabled` option in the `configureOptions()` method:
-
-This configures the default option for the data table type - which still can be changed when creating the data table itself!
 
 The personalization feature may look really handy, but refresh the page after applying the personalization - it's gone! Now imagine configuring it on every request as the user - nightmare :ghost:\
 This can be solved by [enabling the persistence feature](../basic-usage/persisting-applied-data.md), which will save the personalization data (and even the applied pagination, sorting and filters if you wish!) between requests, per user.

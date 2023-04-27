@@ -22,6 +22,7 @@ There are multiple labels that can be translated - for example, column headers o
 {% code title="src/DataTable/Type/ProductDataTableType.php" lineNumbers="true" %}
 ```php
 use Kreyu\Bundle\DataTableBundle\Type\AbstractDataTableType;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ProductDataTableType extends AbstractDataTableType
 {
@@ -40,12 +41,12 @@ This configures the default translation domain for the specific data table type 
 {% code title="src/Controller/ProductController.php" lineNumbers="true" %}
 ```php
 use App\DataTable\Type\ProductDataTableType;
-use Kreyu\Bundle\DataTableBundle\DataTableControllerTrait;
+use Kreyu\Bundle\DataTableBundle\DataTableFactoryAwareTrait;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ProductController extends AbstractController
 {
-    use DataTableControllerTrait;
+    use DataTableFactoryAwareTrait;
     
     public function index()
     {
@@ -74,6 +75,10 @@ There may be some cases, where a single column may use a different translation d
 ```php
 use Kreyu\Bundle\DataTableBundle\DataTableBuilderInterface;
 use Kreyu\Bundle\DataTableBundle\Type\AbstractDataTableType;
+use Kreyu\Bundle\DataTableBundle\Column\Type\DateTimeColumnType;
+use Kreyu\Bundle\DataTableBundle\Column\Type\NumberColumnType;
+use Kreyu\Bundle\DataTableBundle\Column\Type\TextColumnType;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ProductDataTableType extends AbstractDataTableType
 {
